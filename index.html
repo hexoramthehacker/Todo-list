@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus | Premium Task Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background-gradient"></div>
+
+    <main class="glass-container">
+        <header>
+            <div class="greeting-area">
+                <h1 id="greeting">Hello, User</h1>
+                <p id="date">Today, 12 Oct</p>
+            </div>
+            <div class="progress-container">
+                <div class="progress-text">
+                    <span>Daily Progress</span>
+                    <span id="progress-percent">0%</span>
+                </div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="progress-bar"></div>
+                </div>
+            </div>
+        </header>
+
+        <div class="input-area">
+            <div class="input-wrapper">
+                <input type="text" id="todo-input" placeholder="What is your main focus?">
+                <button id="add-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="list-container">
+            <ul id="todo-list">
+                </ul>
+            <div id="empty-state">
+                <p>All caught up! ✨</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
