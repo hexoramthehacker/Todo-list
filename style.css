@@ -20,7 +20,7 @@ body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center; /* Center vertically on desktop */
+    align-items: center;
     color: var(--dark);
     overflow-x: hidden;
 }
@@ -111,7 +111,7 @@ header {
     transition: width 0.5s ease-out;
 }
 
-/* --- Input Area --- */
+/* --- Input Area (UPDATED FIX) --- */
 .input-area {
     margin-bottom: 20px;
 }
@@ -119,11 +119,14 @@ header {
 .input-wrapper {
     display: flex;
     align-items: center;
+    justify-content: space-between; /* Ensures proper spacing */
     background: white;
     border-radius: 16px;
-    padding: 5px 5px 5px 20px;
+    padding: 5px;
+    padding-left: 15px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.04);
     transition: transform 0.2s;
+    gap: 10px; /* Adds space between text and button */
 }
 
 .input-wrapper:focus-within {
@@ -133,11 +136,13 @@ header {
 
 input {
     flex: 1;
+    min-width: 0; /* CRITICAL FIX: prevents input from pushing button out */
     border: none;
     outline: none;
     font-size: 1rem;
     color: var(--dark);
     background: transparent;
+    padding: 10px 0;
 }
 
 #add-btn {
@@ -152,6 +157,7 @@ input {
     align-items: center;
     justify-content: center;
     transition: background 0.3s;
+    flex-shrink: 0; /* CRITICAL FIX: Stops button from being squashed */
 }
 
 #add-btn:hover {
@@ -217,12 +223,14 @@ li:hover {
     align-items: center;
     justify-content: center;
     transition: all 0.2s;
+    flex-shrink: 0; /* Ensures checkbox doesn't squash */
 }
 
 .task-content {
     font-size: 0.95rem;
     font-weight: 500;
     transition: color 0.2s;
+    word-break: break-word; /* Prevents long words from breaking layout */
 }
 
 /* Completed State */
@@ -247,6 +255,7 @@ li.completed .task-content {
     gap: 8px;
     opacity: 0.6;
     transition: opacity 0.2s;
+    flex-shrink: 0;
 }
 
 li:hover .actions {
@@ -278,6 +287,8 @@ li:hover .actions {
     border-radius: 8px;
     color: var(--primary);
     font-weight: 600;
+    border: none;
+    outline: none;
 }
 
 #empty-state {
